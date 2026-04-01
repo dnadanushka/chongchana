@@ -53,10 +53,10 @@ class _ChongjaroenScaffoldState extends State<ChongjaroenScaffold> {
               icon: Icon(ChongjaroenIcons.book),
               label: Locales.Menu,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet),
-              label: Locales.Wallet,
-            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.account_balance_wallet),
+            //   label: Locales.Wallet,
+            // ),
           ],
           currentIndex: selectedIndex,
           iconSize: 26,

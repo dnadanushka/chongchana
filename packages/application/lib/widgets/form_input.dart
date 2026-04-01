@@ -1,6 +1,7 @@
 import 'package:chongchana/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 TextStyle labelFormStyle = const TextStyle(
   color: ChongjaroenColors.grayColors,
@@ -10,6 +11,12 @@ TextStyle labelFormStyle = const TextStyle(
 
 TextStyle textFormStyle = const TextStyle(
   color: ChongjaroenColors.blackColor,
+  fontWeight: FontWeight.w400,
+  fontSize: 20,
+);
+
+TextStyle textFormStyle2 = const TextStyle(
+  color: ChongjaroenColors.whiteColor,
   fontWeight: FontWeight.w400,
   fontSize: 20,
 );
@@ -50,6 +57,11 @@ class CJRTextFormField extends StatelessWidget {
     this.initValue = "",
     this.limitLength = 100,
     this.onChanged,
+    this.style = const TextStyle(
+      color: ChongjaroenColors.blackColor,
+      fontWeight: FontWeight.w400,
+      fontSize: 20,
+    ),
   }) : super(key: key);
 
   final String labelText;
@@ -59,6 +71,7 @@ class CJRTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final String? initValue;
   final int? limitLength;
+  final TextStyle style;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +90,7 @@ class CJRTextFormField extends StatelessWidget {
         child: TextFormField(
           initialValue: initValue,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          style: textFormStyle,
+          style: style,
           decoration: textFormDecoration,
           keyboardType: keyboardType,
           inputFormatters: inputFormat,
@@ -100,6 +113,11 @@ class CJRDropdowntormField extends StatefulWidget {
     required this.dropdownItems,
     required this.initValue,
     this.onChanged,
+    this.style = const TextStyle(
+      color: ChongjaroenColors.blackColor,
+      fontWeight: FontWeight.w400,
+      fontSize: 20,
+    ),
   }) : super(key: key);
 
   final String? labelText;
@@ -107,6 +125,7 @@ class CJRDropdowntormField extends StatefulWidget {
   final void Function(String?) onSaved;
   final List<DropdownMenuItem<String>> dropdownItems;
   final String initValue;
+  final TextStyle style;
 
   @override
   State<CJRDropdowntormField> createState() => _CJRDropdowntormFieldState();
@@ -132,7 +151,7 @@ class _CJRDropdowntormFieldState extends State<CJRDropdowntormField> {
             autovalidateMode: AutovalidateMode.disabled,
             value: selectedValue,
             items: widget.dropdownItems,
-            style: textFormStyle,
+            style: widget.style,
             decoration: textFormDecoration,
             onChanged: (String? value) {
               setState(() {

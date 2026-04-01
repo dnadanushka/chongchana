@@ -360,7 +360,7 @@ class _AddBookingPageState extends State<AddBookingPage> {
                             autovalidateMode: AutovalidateMode.disabled,
                             value: branchsDropdownItems.first.value!,
                             items: branchsDropdownItems,
-                            style: textFormStyle,
+                            style: textFormStyle2,
                             decoration: textFormDecoration,
                             onSaved: (String? value) {
                               setState(() {
@@ -396,6 +396,7 @@ class _AddBookingPageState extends State<AddBookingPage> {
                       },
                       keyboardType: TextInputType.name,
                       limitLength: 36,
+                      style: textFormStyle2,
                     ),
                     CJRTextFormField(
                       labelText: 'Mobile Number (เบอร์โทรศัพท์)',
@@ -416,6 +417,7 @@ class _AddBookingPageState extends State<AddBookingPage> {
                       },
                       keyboardType: TextInputType.phone,
                       limitLength: 10,
+                      style: textFormStyle2,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -430,6 +432,7 @@ class _AddBookingPageState extends State<AddBookingPage> {
                               });
                             },
                             dropdownItems: peopleAmountItems,
+                            style: textFormStyle2,
                           ),
                         ),
                         const SizedBox(width: 18),
@@ -449,7 +452,7 @@ class _AddBookingPageState extends State<AddBookingPage> {
                                   readOnly: true,
                                   autovalidateMode:
                                       AutovalidateMode.onUserInteraction,
-                                  style: textFormStyle,
+                                  style: textFormStyle2,
                                   decoration: textFormDecoration,
                                   onSaved: (value) {
                                     setState(() {

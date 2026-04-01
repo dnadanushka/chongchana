@@ -292,6 +292,6 @@ class BookingModel extends ChangeNotifier {
     }
     isLoading = false;
     notifyListeners();
-    return _branchAvailable;
+    return _branchAvailable ?? [];
   }
 }
